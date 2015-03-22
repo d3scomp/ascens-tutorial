@@ -1,4 +1,4 @@
-### Development of Smart Cyber-Physical Systems (CBSE 2014 Tutorial)
+### Development of Smart Cyber-Physical Systems (ASCENS Spring School 2015 Tutorial)
 ---
 The project contains 4 examples:
 
@@ -12,7 +12,7 @@ The project contains 4 examples:
 
 Each of the projects is an Eclipse project. To run it, simply import the project to Eclipse. The launch configuration is part of the project, thus a corresponding run target automatically appears in the Run configurations. Simply run the project by executing the run configuration.
 
-The slides accompanying the examples are located in the file [tutorial.pdf](https://github.com/d3scomp/cbse-tutorial/raw/master/tutorial.pdf).
+The slides accompanying the examples are located in the file [tutorial.pdf](https://github.com/d3scomp/ascens-tutorial/raw/master/tutorial.pdf).
 
 More information about DEECo and jDEECo can be found at:
 
