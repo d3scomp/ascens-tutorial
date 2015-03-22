@@ -71,7 +71,6 @@ public class Main {
 		VehicleComponent component = new VehicleComponent(compIdString, 
 				agent.getActuatorProvider(), agent.getSensorProvider(), matSim.getRouter(), agent.getSimulation().getTimer());
 		node.deployComponent(component);
-		
 	}
 
 	/**
