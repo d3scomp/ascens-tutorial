@@ -27,14 +27,6 @@ public class Main {
 	private static MATSimSimulation matSim;
 	private static DEECoSimulation simulation; 
 	
-	/*private static JDEECoAgentSource jdeecoAgentSource;
-	private static MATSimSimulation simulation;
-	private static MATSimRouter router;
-	private static MATSimDataProviderReceiver matSimProviderReceiver;
-	
-	private static AnnotationProcessor processor;
-	private static SimulationRuntimeBuilder builder;
-*/
 	public static void main(String[] args) throws AnnotationProcessorException,	IOException, InstantiationException, IllegalAccessException, DEECoException {
 		Log.i("Preparing simulation");
 		
@@ -66,32 +58,6 @@ public class Main {
 		// Overrides end time specified in the MATSim configuration
 		simulation.start(2900000);
 		Log.i("Simulation Finished");
-		
-		
-	/*	jdeecoAgentSource = new JDEECoAgentSource();
-		PopulationAgentSource populationAgentSource = new PopulationAgentSource();
-		
-		matSimProviderReceiver = new MATSimDataProviderReceiver();
-		simulation = new MATSimSimulation(matSimProviderReceiver, matSimProviderReceiver, Arrays.asList(jdeecoAgentSource, populationAgentSource), MATSIM_CONFIG_CUSTOM);
-		reducePopulation(simulation.getControler().getPopulation());
-		populationAgentSource.setPopulation(simulation.getControler().getPopulation());
-		
-		router = new MATSimRouter(simulation.getControler(), simulation.getTravelTime());
-		matSimProviderReceiver.setRouter(router);
-
-		Log.i("Creating components");
-
-		processor = new AnnotationProcessor(RuntimeMetadataFactoryExt.eINSTANCE);
-		builder = new SimulationRuntimeBuilder();
-
-		createAndDeployVehicleComponent(1, "1_1");
-		createAndDeployVehicleComponent(2, "50_2");
-		createAndDeployVehicleComponent(3, "22_3");
-		createAndDeployVehicleComponent(4, "59_3");		
-		
-		simulation.run();
-		Log.i("Simulation Finished");
-		*/
 	}
 	
 	private static void createAndDeployVehicleComponent(int idx, String sourceLinkIdString) throws AnnotationProcessorException, InstantiationException, IllegalAccessException, DEECoException {
@@ -106,22 +72,6 @@ public class Main {
 				agent.getActuatorProvider(), agent.getSensorProvider(), matSim.getRouter(), agent.getSimulation().getTimer());
 		node.deployComponent(component);
 		
-		
-	/*	String compIdString = "V" + idx;
-		Id compId = new IdImpl(compIdString);
-		Id sourceLinkId = new IdImpl(sourceLinkIdString);
-
-		jdeecoAgentSource.addAgent(new JDEECoAgent(compId, sourceLinkId));
-
-		VehicleComponent component = new VehicleComponent(compIdString, 
-				matSimProviderReceiver.getActuatorProvider(compId), matSimProviderReceiver.getSensorProvider(compId), router, simulation);
-		
-		RuntimeMetadata model = RuntimeMetadataFactoryExt.eINSTANCE.createRuntimeMetadata();
-		processor.process(model, component);
-		
-		DirectSimulationHost host = simulation.getHost(compIdString);
-		RuntimeFramework runtime = builder.build(host, simulation, model, null, null);
-		runtime.start(); */		
 	}
 
 	/**
